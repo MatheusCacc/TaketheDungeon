@@ -148,7 +148,7 @@ RectTransform:
   m_GameObject: {fileID: 40388487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6398, y: 1.6398, z: 1.6398}
   m_Children:
   - {fileID: 209665098}
   - {fileID: 679606590}
@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.1048, y: 69.415}
+  m_AnchoredPosition: {x: 189, y: 82}
   m_SizeDelta: {x: 196.0096, y: 105.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &42104526
@@ -472,6 +472,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144623183}
   m_CullTransparentMesh: 1
+--- !u!1 &192365795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192365796}
+  - component: {fileID: 192365797}
+  m_Layer: 0
+  m_Name: ScreenControler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &192365796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192365795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 194.42604, y: 164.26833, z: -433.50452}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &192365797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192365795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879bf8b07ae2d1141b956869f5357054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &199746949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1441,7 @@ RectTransform:
   m_GameObject: {fileID: 495960048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.83865, y: 0.83865, z: 0.83865}
   m_Children:
   - {fileID: 920606271}
   - {fileID: 1464898545}
@@ -1409,7 +1452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.1294, y: -0.054152}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &584490140
@@ -3351,7 +3394,7 @@ RectTransform:
   m_GameObject: {fileID: 1073531285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3096, y: 1.3096, z: 1.3096}
   m_Children:
   - {fileID: 1577512414}
   - {fileID: 1462883224}
@@ -3360,7 +3403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.1, y: -119}
+  m_AnchoredPosition: {x: 185, y: -196}
   m_SizeDelta: {x: 196.01, y: 142.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1091934312
@@ -3803,7 +3846,7 @@ RectTransform:
   m_GameObject: {fileID: 1171619601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4833, y: 1.4833, z: 1.4833}
   m_Children:
   - {fileID: 2095162824}
   - {fileID: 1670140804}
@@ -3813,7 +3856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150.12, y: -55.025505}
+  m_AnchoredPosition: {x: -233, y: -105}
   m_SizeDelta: {x: 147.76, y: 143.161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1193375223
@@ -4120,7 +4163,7 @@ RectTransform:
   m_GameObject: {fileID: 1299820617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8173, y: 1.8173, z: 1.8173}
   m_Children:
   - {fileID: 800720315}
   - {fileID: 495960049}
@@ -4129,7 +4172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150.12178, y: 72.27669}
+  m_AnchoredPosition: {x: -235, y: 109}
   m_SizeDelta: {x: 147.7565, y: 111.4466}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1317103686
@@ -4457,7 +4500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5805,7 +5848,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1670140806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 192365797}
+        m_TargetAssemblyTypeName: ScreenControler, Assembly-CSharp
+        m_MethodName: IniciarJogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1670140806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6879,7 +6934,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1943758976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 192365797}
+        m_TargetAssemblyTypeName: ScreenControler, Assembly-CSharp
+        m_MethodName: EntrarInicio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1943758976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7143,7 +7210,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2095162826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 192365797}
+        m_TargetAssemblyTypeName: ScreenControler, Assembly-CSharp
+        m_MethodName: SalvarConfig
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2095162826
 MonoBehaviour:
   m_ObjectHideFlags: 0
