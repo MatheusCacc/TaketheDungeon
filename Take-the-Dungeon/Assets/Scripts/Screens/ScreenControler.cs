@@ -25,6 +25,7 @@ public class ScreenControler : MonoBehaviour
         PlayerPrefs.SetInt("indiceAntesConfig", telaAntes);
         SceneManager.LoadScene(3);//tela de configuracoes
     }
+
     public void TelaCreditos() {
         SceneManager.LoadScene(4);//tela de creditos
     }
@@ -36,6 +37,17 @@ public class ScreenControler : MonoBehaviour
         Debug.Log(indiceAtual);
         SceneManager.LoadScene(indiceAtual);
     }
-    
-    
+    public void SairInventario()
+    {//Voltar para o jogo
+        SceneManager.LoadScene(5);
+    }
+    public void ClasseA() {
+        SceneManager.LoadScene(5);
+    }
+    public void ClasseB() {
+        SceneManager.LoadScene(5);
+    }
+    public void ClasseC() {
+        SceneManager.LoadScene(5);
+    }
 }
