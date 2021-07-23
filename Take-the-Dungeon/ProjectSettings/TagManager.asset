@@ -50,6 +50,9 @@ TagManager:
   - name: Parede
     uniqueID: 2867558947
     locked: 0
+  - name: Item
+    uniqueID: 810362691
+    locked: 0
   - name: Player
     uniqueID: 3363915741
     locked: 0

@@ -5,23 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class Jogador : MonoBehaviour
 {
+    public float speed;
+
+    private Rigidbody2D rig;
+    private Vector2 direction;
+    
     [Header("Status")]
     public int vida;
     public int energia;
     public int xp;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        rig = GetComponent<Rigidbody2D>();
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) {
-            SceneManager.LoadScene(7);
-        }   
-        if (xp >= 300) {
-            SceneManager.LoadScene(8);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SceneManager.LoadScene(6);
-        }
+        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));//armazena o imput pressionado
+    }
+
+    private void FixedUpdate()
+    {
+        rig.MovePosition(rig.position + direction * speed * Time.fixedDeltaTime);//velocidade.
     }
 }
