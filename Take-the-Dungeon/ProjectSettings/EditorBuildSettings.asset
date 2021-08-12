@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/TeladeInicio.unity
     guid: 8352ac73e8791334d82bd26f05d41368
@@ -15,24 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TelaInicial.unity
     guid: f44b25ba54d560a43a7f55cdc4f7ae38
   - enabled: 1
-    path: Assets/Scenes/TeladeCadastro.unity
-    guid: 06ed2ace52e13264aa7731d61747b292
-  - enabled: 1
-    path: Assets/Scenes/TelaConfig.unity
-    guid: 8fb9c64daa8e2ce4092e679f8f18805e
-  - enabled: 1
-    path: Assets/Scenes/TeladeCredito.unity
-    guid: 3f1f30eba9f22714cb79e05ec68a8a1f
-  - enabled: 1
     path: Assets/Scenes/TeladoJogo.unity
     guid: a5a44f17288cda94daa578ed727847a8
   - enabled: 1
-    path: Assets/Scenes/TelaStatus.unity
-    guid: c5cef9fde21c6774dbbb09eaee23c269
-  - enabled: 1
-    path: Assets/Scenes/TeladoInventario.unity
-    guid: c4aad21b1fb1a544daf07d1983eea3fa
-  - enabled: 1
-    path: Assets/Scenes/TeladeEvolucao.unity
-    guid: 8335d95dd1fc89e4d8f15f95ee73d700
+    path: Assets/Scenes/TelaConfg.unity
+    guid: 8f79f520064c30449aba1e61530c31b6
   m_configObjects: {}

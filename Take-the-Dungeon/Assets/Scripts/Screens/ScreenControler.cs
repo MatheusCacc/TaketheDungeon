@@ -5,49 +5,63 @@ using UnityEngine.SceneManagement;
 
 public class ScreenControler : MonoBehaviour
 {
-    int telaAntes;
+    public GameObject[] gm_obj;
+    public int x = 0;
 
-    public void Cadastrar() {
-        SceneManager.LoadScene(2);//tela de cadastro
+    public void ScreenSwitchTI(int requestCode) {
+        switch (requestCode) {
+            case 0:
+                gm_obj[0].SetActive(false);
+                gm_obj[1].SetActive(true);
+                break;
+            case 1:
+                gm_obj[1].SetActive(false);
+                gm_obj[2].SetActive(true);
+                break;
+            case 2:
+                gm_obj[2].SetActive(false);
+                gm_obj[1].SetActive(true);
+                break;
+        }
     }
-    public void VoltarLogin() {
-        SceneManager.LoadScene(0);//tela de login
-    }
-    public void VoltarTelaInicial() {
-        SceneManager.LoadScene(1);//tela de inicio
-    }
-    public void IniciarJogo() {
-        SceneManager.LoadScene(5);//comeca o jogo
+    public void ScreenSwitchTP(int requestCode) {
+        switch (requestCode) {
+            case 1:
+                SceneManager.LoadScene(2);
+                break;
+            case 2:
+                gm_obj[0].SetActive(false);
+                gm_obj[6].SetActive(true);
+                break;
+            case 7:
+                gm_obj[6].SetActive(false);
+                gm_obj[0].SetActive(true);
+                break;
+
+        }
 
     }
-    public void TelaConfig() {
-        telaAntes = SceneManager.GetActiveScene().buildIndex;
-        PlayerPrefs.SetInt("indiceAntesConfig", telaAntes);
-        SceneManager.LoadScene(3);//tela de configuracoes
-    }
 
-    public void TelaCreditos() {
-        SceneManager.LoadScene(4);//tela de creditos
+    public void Princ_Conf() {
+        SceneManager.LoadScene(3);
+        x = 1;
     }
-    public void Sair() {
-        Application.Quit();//fechar jogo
+    public void Jogo_Conf() {
+        SceneManager.LoadScene(3);
+        x = 2;
     }
-    public void SalvarConfig() {//salvar configs e voltar pra tela anterior
-        int indiceAtual = PlayerPrefs.GetInt("indiceAntesConfig");
-        Debug.Log(indiceAtual);
-        SceneManager.LoadScene(indiceAtual);
-    }
-    public void SairInventario()
-    {//Voltar para o jogo
-        SceneManager.LoadScene(5);
-    }
-    public void ClasseA() {
-        SceneManager.LoadScene(5);
-    }
-    public void ClasseB() {
-        SceneManager.LoadScene(5);
-    }
-    public void ClasseC() {
-        SceneManager.LoadScene(5);
+    public void Princ_Jogo_Config() {
+        switch (x) {
+            case 1:
+                //implementar a mudança de cenas entre jogo/tela inicio para configurações.
+                //raciocinio atual seria se vier da tela de incio, o x recebe 1 e se vier da tela jogo, o x recebe 2.
+                //assim, quando clicasse em voltar, o usuario iria pra tela anterior.
+                x = 0;
+                break;
+            case 2:
+                SceneManager.LoadScene(2);
+                x = 0;
+                break;
+        }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Cant_Sup_Esq_Alt
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 5594366403869681922, guid: 43fabbc48fd469b4394ede353c4c58dc, type: 3}
+  m_Sprite: {fileID: -5259121015886383475, guid: 718ab42122a408e45a696d4198d759bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

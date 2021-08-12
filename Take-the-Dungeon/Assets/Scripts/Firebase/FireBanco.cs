@@ -7,6 +7,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class FireBanco : MonoBehaviour
 {
+    public GameObject[] gm_obj;
+
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
     public static FireBanco instance;
@@ -52,7 +54,8 @@ public class FireBanco : MonoBehaviour
 
             if (RegisterTask.Exception == null)
             {
-                SceneManager.LoadScene(0);//tela de Login
+                gm_obj[1].SetActive(false);
+                gm_obj[0].SetActive(true);
             }
         }
     }
