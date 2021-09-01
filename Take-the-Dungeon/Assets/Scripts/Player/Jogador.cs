@@ -8,7 +8,12 @@ public class Jogador : MonoBehaviour
     public float speed;
 
     private Rigidbody2D rig;
-    private Vector2 direction;
+    private Vector2 _direction;
+
+    public Vector2 direction{
+        get { return _direction;}
+        set { _direction = value;}
+    } 
     
     [Header("Status")]
     public int vida;
@@ -23,11 +28,11 @@ public class Jogador : MonoBehaviour
     }
     void Update()
     {
-        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));//armazena o imput pressionado
+        _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));//armazena o imput pressionado
     }
 
     private void FixedUpdate()
     {
-        rig.MovePosition(rig.position + direction * speed * Time.fixedDeltaTime);//velocidade.
+        rig.MovePosition(rig.position + _direction * speed * Time.fixedDeltaTime);//velocidade.
     }
 }
