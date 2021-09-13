@@ -1,55 +1,167 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using TMPro;
+
 public class FireBancoLogin : MonoBehaviour
 {
+    //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
-    public static FireBanco instance;
     public FirebaseAuth auth;
     public FirebaseUser User;
 
+    //Login variables
     [Header("Login")]
-    public InputField email;
-    public InputField senha;
-    private void Awake()
+    public TMP_InputField emailLoginField;
+    public TMP_InputField passwordLoginField;
+    public TMP_Text warningLoginText;
+    public TMP_Text confirmLoginText;
+
+    //Register variables
+    [Header("Register")]
+    public TMP_InputField usernameRegisterField;
+    public TMP_InputField emailRegisterField;
+    public TMP_InputField passwordRegisterField;
+    public TMP_InputField passwordRegisterVerifyField;
+    public TMP_Text warningRegisterText;
+
+    void Awake()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             dependencyStatus = task.Result;
-
             if (dependencyStatus == DependencyStatus.Available)
             {
                 InitializeFirebase();
             }
             else
             {
-                Debug.LogError("Error: " + dependencyStatus);
+                Debug.LogError("Could not resolve all Firebase dependencies: " + dependencyStatus);
             }
         });
     }
-    public void InitializeFirebase()
+
+    private void InitializeFirebase()
     {
+        Debug.Log("Setting up Firebase Auth");
         auth = FirebaseAuth.DefaultInstance;
     }
 
     public void LoginButton()
     {
-        StartCoroutine(Login(email.text, senha.text));
+        StartCoroutine(Login(emailLoginField.text, passwordLoginField.text));
+        
     }
-    public IEnumerator Login(string _email, string _senha)
+    public void RegisterButton()
     {
-            var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _senha);
-            yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
+        StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
+    }
 
-            if (LoginTask.Exception == null)
+    private IEnumerator Login(string _email, string _password)
+    {
+        var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
+        yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
+
+        if (LoginTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {LoginTask.Exception}");
+            FirebaseException firebaseEx = LoginTask.Exception.GetBaseException() as FirebaseException;
+            AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+
+            string message = "Login Failed!";
+            switch (errorCode)
             {
-                SceneManager.LoadScene(1);//tela de Inicio
+                case AuthError.MissingEmail:
+                    message = "Missing Email";
+                    break;
+                case AuthError.MissingPassword:
+                    message = "Missing Password";
+                    break;
+                case AuthError.WrongPassword:
+                    message = "Wrong Password";
+                    break;
+                case AuthError.InvalidEmail:
+                    message = "Invalid Email";
+                    break;
+                case AuthError.UserNotFound:
+                    message = "Account does not exist";
+                    break;
             }
+            warningLoginText.text = message;
+        }
+        else
+        {
+            ScreenControler.instance.play();
+            warningRegisterText.text = "";
+        }
+    }
 
+    private IEnumerator Register(string _email, string _password, string _username)
+    {
+        if (_username == "")
+        {
+            warningRegisterText.text = "Missing Username";
+        }
+        else if (passwordRegisterField.text != passwordRegisterVerifyField.text)
+        {
+            warningRegisterText.text = "Password Does Not Match!";
+        }
+        else
+        {
+            var RegisterTask = auth.CreateUserWithEmailAndPasswordAsync(_email, _password);
+            yield return new WaitUntil(predicate: () => RegisterTask.IsCompleted);
+
+            if (RegisterTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed to register task with {RegisterTask.Exception}");
+                FirebaseException firebaseEx = RegisterTask.Exception.GetBaseException() as FirebaseException;
+                AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+
+                string message = "Register Failed!";
+                switch (errorCode)
+                {
+                    case AuthError.MissingEmail:
+                        message = "Missing Email";
+                        break;
+                    case AuthError.MissingPassword:
+                        message = "Missing Password";
+                        break;
+                    case AuthError.WeakPassword:
+                        message = "Weak Password";
+                        break;
+                    case AuthError.EmailAlreadyInUse:
+                        message = "Email Already In Use";
+                        break;
+                }
+                warningRegisterText.text = message;
+            }
+            else
+            {
+                User = RegisterTask.Result;
+
+                if (User != null)
+                {
+                    UserProfile profile = new UserProfile { DisplayName = _username };
+
+                    var ProfileTask = User.UpdateUserProfileAsync(profile);
+                    yield return new WaitUntil(predicate: () => ProfileTask.IsCompleted);
+
+                    if (ProfileTask.Exception != null)
+                    {
+                        Debug.LogWarning(message: $"Failed to register task with {ProfileTask.Exception}");
+                        FirebaseException firebaseEx = ProfileTask.Exception.GetBaseException() as FirebaseException;
+                        AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+                        warningRegisterText.text = "Username Set Failed!";
+                    }
+                    else
+                    {
+                        ScreenControler.instance.LoginScreen();
+                        warningRegisterText.text = "";
+                    }
+                }
+            }
+        }
     }
 }
