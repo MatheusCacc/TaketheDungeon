@@ -7,22 +7,24 @@ public class Jogador : MonoBehaviour
 {
     public float speed;
     public float runspeed;
+
     
     private float initialspeed;
     private Rigidbody2D rig;
     private Vector2 _direction;
+    private Jog_anim Jogador_Anim;
 
     public Vector2 direction{
         get { return _direction;}
         set { _direction = value;}
     } 
 
-    // Update is called once per frame
-
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         initialspeed = speed;
+        
+        
     }
     void Update()
     {
@@ -38,22 +40,35 @@ public class Jogador : MonoBehaviour
 
     #region Movimentação
 
-    void OnImput() {
+    public void moviment() {
+
+    
+    }
+    void OnImput()
+    {
         _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
-    void OnMove() {
+    void OnMove()
+    {
         rig.MovePosition(rig.position + _direction * speed * Time.fixedDeltaTime);
     }
 
-    void OnRun() {
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+    void OnRun()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
             speed = runspeed;
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift)) {
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
             speed = initialspeed;
         }
     }
+    #endregion
+
+    #region Ataque
+
     #endregion
 }

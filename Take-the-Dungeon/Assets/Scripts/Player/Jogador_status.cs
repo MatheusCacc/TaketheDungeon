@@ -6,6 +6,7 @@ using UnityEngine;
 public class Jogador_status : MonoBehaviour
 {
     private int chgclass;
+    public GameObject end;
 
     #region life
     public int life = 20;
@@ -42,10 +43,94 @@ public class Jogador_status : MonoBehaviour
             MaxXp += 25;
             currentxp = 0;
 
+            if (level == 5) {
+                ChooseClass();
+            }
+
         }
         else if (level == maxlevel ) {
             ismax = true;
             MaxXp = 10000000000000;
+        }
+    }
+
+    #region Telas
+
+    public GameObject Inventory;
+    public GameObject Status;
+    public GameObject Evolution;
+    public GameObject Pause;
+
+    public void OpenInv() {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (Inventory.activeSelf)
+            {
+                Inventory.SetActive(false);
+                Time.timeScale = 1;
+
+            }
+            else
+            {
+                Inventory.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+    }
+
+    public void OpenStatus()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (Status.activeSelf)
+            {
+                Status.SetActive(false);
+                Time.timeScale = 1;
+
+            }
+            else
+            {
+                Status.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+    }
+    public void OpenPause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Pause.activeSelf)
+            {
+                Pause.SetActive(false);
+                Time.timeScale = 1;
+
+            }
+            else
+            {
+                Pause.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+    }
+
+    public void ChooseClass() { 
+        
+    }
+    #endregion
+
+    private void Update()
+    {
+        OpenInv();
+        OpenStatus();
+        OpenPause();
+
+
+        endGame();
+    }
+
+    public void endGame() {
+        if (currentlife <= 0) {
+            end.SetActive(true);
         }
     }
 }

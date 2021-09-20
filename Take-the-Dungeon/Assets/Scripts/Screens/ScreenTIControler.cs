@@ -10,7 +10,6 @@ public class ScreenTIControler : MonoBehaviour
 
     public GameObject Inicio;
     public GameObject Credito;
-    public GameObject Config;
 
     private void Awake()
     {
@@ -33,9 +32,9 @@ public class ScreenTIControler : MonoBehaviour
     }
     public void ConfigScene()
     {
-        Inicio.SetActive(false);
-        Config.SetActive(true);
+        SceneManager.LoadScene(3);
     }
+
     public void CreditScene()
     {
         Inicio.SetActive(false);
@@ -44,6 +43,11 @@ public class ScreenTIControler : MonoBehaviour
 
     public void ExitLogin() {
         SceneManager.LoadScene(0);
+    }
+    public void ReturnIn()
+    {
+        Inicio.SetActive(true);
+        Credito.SetActive(false);
     }
     #endregion
 }

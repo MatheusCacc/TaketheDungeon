@@ -74,19 +74,19 @@ public class FireBancoLogin : MonoBehaviour
             switch (errorCode)
             {
                 case AuthError.MissingEmail:
-                    message = "Missing Email";
+                    message = "E-mail sem preencher";
                     break;
                 case AuthError.MissingPassword:
-                    message = "Missing Password";
+                    message = "Senha sem preencher";
                     break;
                 case AuthError.WrongPassword:
-                    message = "Wrong Password";
+                    message = "Senha errada";
                     break;
                 case AuthError.InvalidEmail:
-                    message = "Invalid Email";
+                    message = "E-mail errado";
                     break;
                 case AuthError.UserNotFound:
-                    message = "Account does not exist";
+                    message = "Conta inexiste";
                     break;
             }
             warningLoginText.text = message;
@@ -102,11 +102,11 @@ public class FireBancoLogin : MonoBehaviour
     {
         if (_username == "")
         {
-            warningRegisterText.text = "Missing Username";
+            warningRegisterText.text = "Usuario sem preencher";
         }
         else if (passwordRegisterField.text != passwordRegisterVerifyField.text)
         {
-            warningRegisterText.text = "Password Does Not Match!";
+            warningRegisterText.text = "As senhas nao sao iguais!";
         }
         else
         {
@@ -123,16 +123,16 @@ public class FireBancoLogin : MonoBehaviour
                 switch (errorCode)
                 {
                     case AuthError.MissingEmail:
-                        message = "Missing Email";
+                        message = "E-mail sem preencher";
                         break;
                     case AuthError.MissingPassword:
-                        message = "Missing Password";
+                        message = "Senha sem preencher";
                         break;
                     case AuthError.WeakPassword:
-                        message = "Weak Password";
+                        message = "Senha muito fraca";
                         break;
                     case AuthError.EmailAlreadyInUse:
-                        message = "Email Already In Use";
+                        message = "E-mail ja esta em uso";
                         break;
                 }
                 warningRegisterText.text = message;

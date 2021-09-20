@@ -7,14 +7,18 @@ TagManager:
   - ClassA
   - ClassB
   - ClassC
+  - Fx
+  - Musica
+  - Rooms
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Jog
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -56,6 +60,12 @@ TagManager:
   - name: Item
     uniqueID: 810362691
     locked: 0
+  - name: Arma
+    uniqueID: 789471873
+    locked: 0
   - name: Player
     uniqueID: 3363915741
+    locked: 0
+  - name: Cura
+    uniqueID: 2156971273
     locked: 0
