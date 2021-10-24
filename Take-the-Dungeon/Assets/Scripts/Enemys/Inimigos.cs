@@ -6,11 +6,9 @@ using UnityEngine.AI;
 public class Inimigos : MonoBehaviour
 {
     [SerializeField] private Inimigo_Anim animEnemy;
-    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] public NavMeshAgent agent;
     private Jogador player;
-
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         player = FindObjectOfType<Jogador>();
@@ -18,7 +16,6 @@ public class Inimigos : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         agent.SetDestination(player.transform.position);
@@ -39,6 +36,6 @@ public class Inimigos : MonoBehaviour
         }
         else {
             transform.eulerAngles = new Vector2(0, 180);
-        }
+        }        
     }
 }

@@ -7,6 +7,7 @@ public class Jog_anim : MonoBehaviour
     private Jogador player;
     private Animator anim;
     private Jogador_status sts;
+    private Warrior wr;
     private bool isHitting = false;
     private float timeCoutn;
     private float recoveryTime = 1.5f;
@@ -24,6 +25,7 @@ public class Jog_anim : MonoBehaviour
         player = GetComponent<Jogador>();
         anim = GetComponent<Animator>();
         sts = GetComponent<Jogador_status>();
+        wr = GetComponent<Warrior>();
     }
 
     // Update is called once per frame
@@ -71,11 +73,11 @@ public class Jog_anim : MonoBehaviour
 
     }
 
-    public void OnHit() {
+    public void OnHit(int dmg) {
         if (!isHitting) {
             anim.SetTrigger("hit");
             isHitting = true;
-            sts.currentlife -= 10;
+            sts.currentlife -= dmg;
 
             if (sts.currentlife <= 0) {
                 anim.SetTrigger("death");

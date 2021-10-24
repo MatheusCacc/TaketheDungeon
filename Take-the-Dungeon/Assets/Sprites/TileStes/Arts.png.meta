@@ -10,7 +10,7 @@ TextureImporter:
     second: Arts_0
   - first:
       213: 6238804997123857811
-    second: Lateral_Inf_Esq
+    second: Arts_1
   - first:
       213: 2459419258814347833
     second: Pedc_Parede_A
@@ -563,6 +563,27 @@ TextureImporter:
       bones: []
       spriteID: e79f0b03190b89cb0800000000000000
       internalID: -4856938060485428866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arts_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 146
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ddf7c1710b49650800000000000000
+      internalID: 6238804997123857811
       vertices: []
       indices: 
       edges: []

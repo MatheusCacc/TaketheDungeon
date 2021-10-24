@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Armor_Controler : MonoBehaviour
 {
-    private Transform sword;
-
-
-
     private void Update()
     {
+        ArmorMoviment();
+    }
+    public void ArmorMoviment() {
         Vector3 mousePos = Input.mousePosition;
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
 
@@ -17,8 +16,6 @@ public class Armor_Controler : MonoBehaviour
 
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg + 180;
 
-        transform.rotation = Quaternion.Euler(0,0, angle);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
-
-
 }

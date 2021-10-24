@@ -10,6 +10,8 @@ public class ScreenTIControler : MonoBehaviour
 
     public GameObject Inicio;
     public GameObject Credito;
+    public Animator PanelAnimator;
+    public int sceneIndex;
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class ScreenTIControler : MonoBehaviour
     #region Comando Botões
     public void playgame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
 
     }
     public void ConfigScene()
@@ -50,4 +52,18 @@ public class ScreenTIControler : MonoBehaviour
         Credito.SetActive(false);
     }
     #endregion
+
+    public void LoadScene()
+    {
+        StartCoroutine(LoadSceneCoroutine(sceneIndex));
+    }
+
+    private IEnumerator LoadSceneCoroutine(int sceneIndex)
+    {
+        PanelAnimator.SetBool("animateOut", true);
+        yield return new WaitForSeconds(2f);
+
+        //Carregar Cena
+        SceneManager.LoadScene(sceneIndex);
+    }
 }

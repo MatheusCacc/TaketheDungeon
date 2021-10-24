@@ -46,7 +46,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 43fabbc48fd469b4394ede353c4c58dc, type: 3}
     - {fileID: 2800000, guid: d375491302719404697b1ae975c1f3df, type: 3}
     - {fileID: 2800000, guid: 7311ace30d486764d832ab26b39a4053, type: 3}
-    totalSpriteSurfaceArea: 20766
+    totalSpriteSurfaceArea: 21602
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -58,6 +58,7 @@ SpriteAtlas:
   - {fileID: 2637403925422779543, guid: d375491302719404697b1ae975c1f3df, type: 3}
   - {fileID: 7696631708137187566, guid: d375491302719404697b1ae975c1f3df, type: 3}
   - {fileID: 72721553976123082, guid: 7311ace30d486764d832ab26b39a4053, type: 3}
+  - {fileID: 6238804997123857811, guid: 7311ace30d486764d832ab26b39a4053, type: 3}
   - {fileID: 5553766713219471093, guid: 7311ace30d486764d832ab26b39a4053, type: 3}
   - {fileID: 3233084743665858861, guid: 7311ace30d486764d832ab26b39a4053, type: 3}
   - {fileID: 7515427676078675191, guid: 7311ace30d486764d832ab26b39a4053, type: 3}
@@ -98,6 +99,7 @@ SpriteAtlas:
   - porta_0
   - porta_1
   - Arts_0
+  - Arts_1
   - Canto_Sup_Alt_Dir
   - Canto_Sup_Dir
   - Lateral_Dir

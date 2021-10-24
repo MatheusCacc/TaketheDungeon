@@ -7,12 +7,12 @@ public class Jogador : MonoBehaviour
 {
     public float speed;
     public float runspeed;
-
     
     private float initialspeed;
     private Rigidbody2D rig;
     private Vector2 _direction;
     private Jog_anim Jogador_Anim;
+    private bool SwordActive = false;
 
     public Vector2 direction{
         get { return _direction;}
@@ -35,7 +35,6 @@ public class Jogador : MonoBehaviour
     private void FixedUpdate()
     {
         OnMove();
-
     }
 
     #region Movimentação

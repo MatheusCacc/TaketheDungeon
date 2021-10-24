@@ -11,6 +11,11 @@ TagManager:
   - Musica
   - Rooms
   - SpawnPoint
+  - Arrow
+  - Magic
+  - Magic2
+  - Arrow_enemy
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -68,4 +73,7 @@ TagManager:
     locked: 0
   - name: Cura
     uniqueID: 2156971273
+    locked: 0
+  - name: Escada
+    uniqueID: 4287036047
     locked: 0

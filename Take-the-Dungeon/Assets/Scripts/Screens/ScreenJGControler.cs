@@ -9,23 +9,33 @@ public class ScreenJGControler : MonoBehaviour
     public GameObject Evolution;
     public GameObject Inventory;
     public GameObject Pause;
-
-    public void resume() {
+    public void resume()
+    {
         Pause.SetActive(false);
         Time.timeScale = 1;
     }
-    public void sair() {
+    public void sair()
+    {
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
 
-    public void status() {
+    public void status()
+    {
         Status.SetActive(false);
         Time.timeScale = 1;
     }
 
-    public void inventory() {
+    public void inventory()
+    {
         Inventory.SetActive(false);
         Time.timeScale = 1;
+    }
+    public void Restart_Game()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void ExitToMenu() {
+        SceneManager.LoadScene(1);
     }
 }
