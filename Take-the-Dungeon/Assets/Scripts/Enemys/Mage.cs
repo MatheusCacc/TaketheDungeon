@@ -23,7 +23,7 @@ public class Mage : MonoBehaviour
     public float range;
 
     #region Status
-    public int life = 8;
+    public float life = 12;
     public int dmg = 4;
 
     #endregion
@@ -57,8 +57,8 @@ public class Mage : MonoBehaviour
             aniMage.SetTrigger("death");
             agent.speed = 0;
             Destroy(gameObject, 0.7f);
-            jgsts.currentxp += 0.5f;
-            
+            jgsts.currentxp += 0.15f;
+            jgsts.lvlUp();
         }
     }
 
@@ -68,7 +68,7 @@ public class Mage : MonoBehaviour
         {
             aniMage.SetTrigger("hit");
             isHitting = true;
-            life -= 4;
+            life -= jgsts.dmg;
         }
     }
 

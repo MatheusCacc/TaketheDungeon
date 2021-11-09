@@ -15,7 +15,12 @@ TagManager:
   - Magic
   - Magic2
   - Arrow_enemy
+  - PtVG
+  - PtMG
+  - cetro
+  - arco
   - Sword
+  - soul
   layers:
   - Default
   - TransparentFX
@@ -24,7 +29,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - Porta
   - 
   - 
   - 

@@ -46,3 +46,15 @@ MonoBehaviour:
       portuguese: "Para esqueletos, isso \xE9 Impossivel"
       english: 
       spanish: 
+  - actorName: NPC
+    profile: {fileID: 0}
+    sentence:
+      portuguese: Mas se quiser ir mesmo, escolha uma dessas armas
+      english: 
+      spanish: 
+  - actorName: NPC
+    profile: {fileID: 0}
+    sentence:
+      portuguese: "E pegue essa po\xE7\xE3o de vida"
+      english: 
+      spanish: 

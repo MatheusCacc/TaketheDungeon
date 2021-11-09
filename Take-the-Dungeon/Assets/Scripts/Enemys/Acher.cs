@@ -10,6 +10,7 @@ public class Acher : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     private Jogador_status jgsts;
     private bool death = false;
+    private int armor = 4;
     private Jogador player;
     private float timeCoutn;
     private float recoveryTime = 1.2f;
@@ -18,10 +19,11 @@ public class Acher : MonoBehaviour
 
     public GameObject arrow;
     public Transform target;
+    public float speed = 1.5f;
     public float range;
 
     #region Status
-    public int life = 8;
+    public float life = 15;
     public int dmg = 4;
 
     #endregion
@@ -56,7 +58,8 @@ public class Acher : MonoBehaviour
             aniArcher.SetTrigger("death");
             agent.speed = 0;
             Destroy(gameObject, 0.7f);
-            jgsts.currentxp += 0.5f;
+            jgsts.currentxp += 0.25f;
+            jgsts.lvlUp();
         }
     }
 
@@ -66,19 +69,22 @@ public class Acher : MonoBehaviour
         {
             aniArcher.SetTrigger("Dmg");
             isHitting = true;
-            life -= 4;
+            life -= jgsts.dmg;
         }
     }
 
     public void shoot()
     {
-        GameObject magics = Instantiate(arrow, bow.position, Quaternion.identity);
-        Instantiate(arrow, bow.position, transform.rotation);
+        if (armor > 0) {
+            GameObject magics = Instantiate(arrow, bow.position, Quaternion.identity);
+            Instantiate(arrow, bow.position, transform.rotation);
+
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+        }
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(bow.position, range);
-
     }
 
 

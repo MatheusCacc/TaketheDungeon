@@ -12,7 +12,6 @@ public class Jog_anim : MonoBehaviour
     private float timeCoutn;
     private float recoveryTime = 1.5f;
 
-    
     [Header("Area do Ataque")]
     [SerializeField] private Transform AtkPoint;
     [SerializeField] private float radius;
@@ -89,3 +88,5 @@ public class Jog_anim : MonoBehaviour
         Gizmos.DrawWireSphere(AtkPoint.position, radius);
     }
 }
+
+

@@ -205,7 +205,7 @@ MonoBehaviour:
   magic: {fileID: 2777968056555048914, guid: 5b12b65e968941648bd379dacf29410b, type: 3}
   target: {fileID: 0}
   range: 0
-  life: 8
+  life: 12
   dmg: 4
 --- !u!95 &9205850005956017829
 Animator:

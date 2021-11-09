@@ -11,7 +11,9 @@ public class ScreenTIControler : MonoBehaviour
     public GameObject Inicio;
     public GameObject Credito;
     public Animator PanelAnimator;
-    public int sceneIndex;
+
+    public int sceneIndex2;
+    public int bossRoom;
 
     private void Awake()
     {
@@ -26,15 +28,22 @@ public class ScreenTIControler : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+        sceneIndex2 = Random.Range(7, 8);
+        bossRoom = 9;
+    }
+
     #region Comando Botões
     public void playgame()
     {
-        SceneManager.LoadScene(4);
-
+        SceneManager.LoadScene(3);
+        PlayerPrefs.DeleteAll();
     }
     public void ConfigScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     public void CreditScene()
@@ -52,18 +61,4 @@ public class ScreenTIControler : MonoBehaviour
         Credito.SetActive(false);
     }
     #endregion
-
-    public void LoadScene()
-    {
-        StartCoroutine(LoadSceneCoroutine(sceneIndex));
-    }
-
-    private IEnumerator LoadSceneCoroutine(int sceneIndex)
-    {
-        PanelAnimator.SetBool("animateOut", true);
-        yield return new WaitForSeconds(2f);
-
-        //Carregar Cena
-        SceneManager.LoadScene(sceneIndex);
-    }
 }

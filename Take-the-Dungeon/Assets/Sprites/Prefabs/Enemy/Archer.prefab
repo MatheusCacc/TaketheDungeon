@@ -223,6 +223,7 @@ MonoBehaviour:
   agent: {fileID: 573363162974400927}
   arrow: {fileID: 919536121084247030, guid: 9343ab107b7f0b442b38bbddae793e7c, type: 3}
   target: {fileID: 0}
+  speed: 1.5
   range: 0.5
-  life: 8
+  life: 15
   dmg: 4

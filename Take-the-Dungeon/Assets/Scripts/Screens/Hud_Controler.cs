@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class Hud_Controler : MonoBehaviour
 {
+    static public Hud_Controler hdcc;
+
     public int level;
+    public int upSoul = 143;
+    public Text tx;
 
     [SerializeField] private Image life;
     [SerializeField] private Image xp;
@@ -17,6 +21,7 @@ public class Hud_Controler : MonoBehaviour
     private void Awake()
     {
         jg_sts = FindObjectOfType < Jogador_status>();
+        hdcc = FindObjectOfType<Hud_Controler>();
     }
 
     // Start is called before the first frame update
@@ -38,7 +43,6 @@ public class Hud_Controler : MonoBehaviour
         life.fillAmount = jg_sts.currentlife / jg_sts.Maxlife;
         xp.fillAmount = jg_sts.currentxp / jg_sts.MaxXp;
         manaB.fillAmount = jg_sts.currentMana / jg_sts.MaxMana;
-        
     }
 
     private void FixedUpdate()
@@ -55,28 +59,62 @@ public class Hud_Controler : MonoBehaviour
 
     public void UpStatusLife() {
         if (jg_sts.Maxlife < 100) {
-            jg_sts.Maxlife += 10;
+            if (jg_sts.countSoul > upSoul)
+            {
+                jg_sts.Maxlife += 10;
+                jg_sts.countSoul -= upSoul;
+                upSoul += 87;
+            }
+            else {
+                tx.text = "Alma insuficiente";
+            }
         }  
     }
     public void UpStatusMana()
     {
         if (jg_sts.MaxMana < 100)
         {
-            jg_sts.MaxMana += 10;
+            if (jg_sts.countSoul > upSoul) {
+                jg_sts.MaxMana += 10;
+                jg_sts.countSoul -= upSoul;
+                upSoul += 87;
+            }
+            else
+            {
+                tx.text = "Alma insuficiente";
+            }
         }
     }
     public void UpStatusStr()
     {
         if (jg_sts.MaxStr < 100)
         {
-            jg_sts.MaxStr += 10;
+            if (jg_sts.countSoul > upSoul)
+            {
+                jg_sts.MaxStr += 10;
+                jg_sts.countSoul -= upSoul;
+                upSoul += 87;
+            }
+            else
+            {
+                tx.text = "Alma insuficiente";
+            }
         }
     }
     public void UpStatusDmg()
     {
         if (jg_sts.MaxDmg < 100)
         {
-            jg_sts.MaxDmg += 10;
+            if (jg_sts.countSoul > upSoul)
+            {
+                jg_sts.MaxDmg += 10;
+                jg_sts.countSoul -= upSoul;
+                upSoul += 87;
+            }
+            else
+            {
+                tx.text = "Alma insuficiente";
+            }
         }
     }
 }

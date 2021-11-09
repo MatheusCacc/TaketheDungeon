@@ -12,7 +12,6 @@ public class Jogador : MonoBehaviour
     private Rigidbody2D rig;
     private Vector2 _direction;
     private Jog_anim Jogador_Anim;
-    private bool SwordActive = false;
 
     public Vector2 direction{
         get { return _direction;}
@@ -22,9 +21,7 @@ public class Jogador : MonoBehaviour
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        initialspeed = speed;
-        
-        
+        initialspeed = speed;        
     }
     void Update()
     {
@@ -65,9 +62,5 @@ public class Jogador : MonoBehaviour
             speed = initialspeed;
         }
     }
-    #endregion
-
-    #region Ataque
-
     #endregion
 }

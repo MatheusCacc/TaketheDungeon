@@ -11,12 +11,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] private LayerMask EnemyLayer;
 
     private Armor_Controler spawn;
-    private Inimigo_Anim inAn;
 
     private void Start()
     {
         spawn = FindObjectOfType<Armor_Controler>();
-        inAn = FindObjectOfType<Inimigo_Anim>();
     }
 
     void Update()
